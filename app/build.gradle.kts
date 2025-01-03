@@ -9,6 +9,10 @@ android {
     namespace = "com.emon.assistedInjectionHiltdemo"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.emon.assistedInjectionHiltdemo"
         minSdk = 24

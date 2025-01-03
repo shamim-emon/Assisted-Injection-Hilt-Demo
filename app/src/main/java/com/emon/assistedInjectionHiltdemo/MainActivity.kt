@@ -3,6 +3,7 @@ package com.emon.assistedInjectionHiltdemo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         val fontSize = 18
 
         val formatter = greetingCardFormatterFactory.create(message, fontSize)
-        println(formatter.format()) // Prints: Message: Happy Birthday!, Font: Sans-serif, Size: 18
+        // Set HILT-ASSISTED-INJECTION as filter in logCat and see the output Message: Happy Birthday!, Font: Sans-serif, Size: 18
+        Timber.tag("HILT-ASSISTED-INJECTION").d(formatter.format())
     }
 }
